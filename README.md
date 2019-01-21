@@ -6,7 +6,7 @@ In this project there are five instance variables (name, hungerLevel, thirstLeve
 
 There are four methods for the virtual pet (feed, giveDrink, rest, and play)
 
-There is also a tick() method, which increases hungerLeve and thirstLevel and decreases energyLevel and happinessLevel every time a user selects an option to interact with the virtual pet, with the exception of checking the status of the pet and exiting the program.
+There is also a tick() method, which increases hungerLevel and thirstLevel and decreases energyLevel and happinessLevel every time a user selects an option to interact with the virtual pet, with the exception of checking the status of the pet and exiting the program.
 
 I also implemented some unit testing for class construction and the methods as a stretch task
 
