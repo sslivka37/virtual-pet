@@ -12,7 +12,7 @@ public class VirtualPetApp {
 
 		System.out.println("You've made a new friend! Its name is " + Skarner.getName());
 
-		// show Skarner visualization here?
+		// show pet visualization here?
 		System.out.println("      ___ __");
 		System.out.println("    _{___{__}\\");
 		System.out.println("   {_}      `\\)");
@@ -25,7 +25,7 @@ public class VirtualPetApp {
 		System.out.println("           << << << <<    \\ `--'  /----)");
 		System.out.println("            ^  ^  ^  ^     `-.....--'''");
 
-		// show user Skarner initial statuses
+		// show user pet's initial statuses
 		System.out.println("These are " + Skarner.getName() + "'s statuses right now:");
 		System.out.println("Hunger level: " + Skarner.getHungerLevel());
 		System.out.println("Thirst level: " + Skarner.getThirstLevel());
@@ -48,32 +48,45 @@ public class VirtualPetApp {
 		// want to call tick for every time user inputs something except checking status
 		// or exiting the game
 		while (userInput == 1 || userInput == 2 || userInput == 3 || userInput == 4 || userInput == 5) {
-			if (userInput == 1) {
+			switch (userInput) {
+
+			case 1:
 				Skarner.feed();
 				System.out.println("You feed " + Skarner.getName());
 				Skarner.tick();
-			}
-			if (userInput == 2) {
+				break;
+
+			case 2:
 				Skarner.giveDrink();
 				System.out.println("You give " + Skarner.getName() + " something to drink");
 				Skarner.tick();
-			}
-			if (userInput == 3) {
+				break;
+
+			case 3:
 				Skarner.rest();
 				System.out.println("You let " + Skarner.getName() + " rest");
 				Skarner.tick();
-			}
-			if (userInput == 4) {
+				break;
+
+			case 4:
 				Skarner.play();
 				System.out.println("You play with " + Skarner.getName());
 				Skarner.tick();
-			}
-			if (userInput == 5) {
+				break;
+
+			case 5:
 				System.out.println("These are Skarner's statuses right now:");
 				System.out.println("Hunger level: " + Skarner.getHungerLevel());
 				System.out.println("Thirst level: " + Skarner.getThirstLevel());
 				System.out.println("Energy level: " + Skarner.getEnergyLevel());
 				System.out.println("Happiness level: " + Skarner.getHappinessLevel());
+				break;
+
+			// this default error message should only occur if the code for the while loop
+			// or the switch cases get changed
+			default:
+				System.out.println("Error: an unexpected value has occured");
+				break;
 
 			}
 
@@ -81,12 +94,36 @@ public class VirtualPetApp {
 			userInput = Integer.parseInt(input.nextLine());
 
 		}
-		if (userInput != 1 && userInput != 2 && userInput != 3 && userInput != 4 && userInput != 5) {
-			System.out.println(Skarner.getName() + " says goodbye!");
-			System.exit(0);
 
-		}
-
+		// typing any other number breaks us out of the loop and gets us here, exiting
+		// the app:
+		
+		
+		System.out.println("         888                      ");
+		System.out.println("         888                      ");
+		System.out.println("         888                      ");
+		System.out.println("         88888b. 888  888 .d88b.  ");
+		System.out.println("         888 '88b888  888d8P  Y8b ");
+		System.out.println("         888  888888  88888888888 ");
+		System.out.println("         888 d88PY88b 888Y8b.     ");
+		System.out.println("         88888P'  'Y88888 'Y8888  ");
+		System.out.println("                      888         ");
+		System.out.println("                 Y8b d88P         ");
+		System.out.println("                  'Y88P'          ");		
+		
+		System.out.println("      ___ __");
+		System.out.println("    _{___{__}\\");
+		System.out.println("   {_}      `\\)");
+		System.out.println("  {_}         `            _.-''''--.._    ");
+		System.out.println("   {_}                    //'.--.  \\___`.");
+		System.out.println("    { }__,_.--~~~-~~~-~~-::.---. `-.\\  `.)");
+		System.out.println("     `-.{_{_{_{_{_{_{_{_//  -- 8;=- `      ");
+		System.out.println("        `-:,_.:,_:,_:,.`\\\\._ ..'=- ,");
+		System.out.println("            // // // //`-.`\\`   .-'/");
+		System.out.println("           << << << <<    \\ `--'  /----)");
+		System.out.println("            ^  ^  ^  ^     `-.....--'''");
+		System.out.println("          "+Skarner.getName() + " says goodbye!");
+		System.exit(0);
 		input.close();
 
 	}
